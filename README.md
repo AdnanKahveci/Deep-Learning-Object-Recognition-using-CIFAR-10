@@ -28,35 +28,3 @@ Bu kütüphaneleri yüklemek için aşağıdaki komutları kullanabilirsiniz:
 ```bash
 pip install tensorflow numpy matplotlib
 
-
-#Kullanım
-##Veri Setini Yükleme ve Ön İşleme:
-###CIFAR-10 veri seti otomatik olarak indirilir ve normalize edilir.
-
-####Veriyi yüklemek ve normalize etmek için:
-```bash
-import tensorflow as tf
-from tensorflow.keras import datasets
-
-(X_train, y_train), (X_test, y_test) = datasets.cifar10.load_data()
-X_train = X_train / 255
-X_test = X_test / 255
-
-####Modelin Oluşturulması:
-####CNN mimarisi oluşturulur ve modelin katmanları tanımlanır:
-
-####İlk Convolutional katmanlar ve MaxPooling2D katmanları ile özellikler çıkarılır.
-####Flatten ve Dense katmanları ile model eğitilir.
-
-```bash
-from tensorflow.keras import layers, models
-
-deep_learning_model = models.Sequential([
-    layers.Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(32, 32, 3)),
-    layers.MaxPooling2D((2, 2)),
-    layers.Conv2D(filters=64, kernel_size=(3, 3), activation='relu'),
-    layers.MaxPooling2D((2, 2)),
-    layers.Flatten(),
-    layers.Dense(64, activation='relu'),
-    layers.Dense(10, activation='softmax')
-])
