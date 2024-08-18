@@ -51,7 +51,7 @@ pip install tensorflow numpy matplotlib
         layers.MaxPooling2D((2, 2)),
         layers.Flatten(),
   ```
--Modeli Eğitin
+- Modeli Eğitin
   Modeli eğitmek için:
   ```bash
     deep_learning_model.compile(optimizer='adam',
@@ -59,13 +59,13 @@ pip install tensorflow numpy matplotlib
               metrics=['accuracy'])
     deep_learning_model.fit(X_train, y_train, epochs=5)
   ```
--Modeli Değerlendirin ve Tahmin Yapın
+- Modeli Değerlendirin ve Tahmin Yapın
   Modeli test veri seti üzerinde değerlendirin ve tahminler yapın:
   ```bash
     deep_learning_model.evaluate(X_test, y_test)
     y_pred = deep_learning_model.predict(X_test)
   ```
--Sonuçları Görselleştirin
+- Sonuçları Görselleştirin
   Test setinden örnekleri ve modelin tahminlerini görselleştirin:
   ```bash
     import matplotlib.pyplot as plt
