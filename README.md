@@ -39,7 +39,7 @@ pip install tensorflow numpy matplotlib
   X_train = X_train / 255
   X_test = X_test / 255
   ```
--Modeli Oluşturun
+- Modeli Oluşturun
   CNN mimarisi oluşturun ve modelin katmanlarını tanımlayın:
   ```bash
     from tensorflow.keras import layers, models
